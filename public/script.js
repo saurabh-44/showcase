@@ -4,22 +4,59 @@ async function loadFile(fileName) {
 
     try {
 
-        const res = await fetch(filePath);
+        const response = await fetch(filePath);
 
-        const data = await res.text();
+        if (!response.ok) {
+            throw new Error("File not found");
+        }
 
-        document.getElementById("fileName").innerText = fileName;
+        const data = await response.text();
 
+        const fileTitle = document.getElementById("fileName");
         const codeBlock = document.getElementById("codeBlock");
 
+
+        // Show file name
+        fileTitle.innerText = fileName;
+
+
+        // Detect language for Prism
+        let language = "javascript";
+
+        if (fileName.endsWith(".md")) {
+            language = "markdown";
+        }
+
+        else if (fileName.endsWith(".html") || fileName.endsWith(".ejs.txt")) {
+            language = "markup";
+        }
+
+        else if (fileName.endsWith(".css")) {
+            language = "css";
+        }
+
+        else if (fileName.endsWith(".json")) {
+            language = "json";
+        }
+
+
+        // Reset class
+        codeBlock.className = "language-" + language;
+
+
+        // Insert code
         codeBlock.textContent = data;
 
+
+        // Highlight
         Prism.highlightElement(codeBlock);
 
-    } catch (error) {
+    }
 
-        alert("Cannot load file");
+    catch (error) {
 
-        console.log(error);
+        alert("❌ Cannot load file");
+
+        console.error(error);
     }
 }

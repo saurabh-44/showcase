@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lead Manager</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<h1>📒 Lead Manager</h1>
+
+
+<form action="/add" method="POST" class="card">
+
+    <input name="name" placeholder="Name" required>
+
+    <input name="mobile" placeholder="Mobile" required>
+
+    <input name="email" type="email" placeholder="Email" required>
+
+    <textarea name="note" placeholder="Note..." required></textarea>
+
+    <button>Add Lead</button>
+
+</form>
+
+
+<h2>All Leads</h2>
+
+
+<% if(leads.length === 0){ %>
+
+<p>No leads found</p>
+
+<% } %>
+
+
+<% leads.forEach(lead => { %>
+
+<div class="card">
+
+    <h3><%= lead.name %></h3>
+
+    <p>📞 <%= lead.mobile %></p>
+
+    <p>📧 <%= lead.email %></p>
+
+    <p><%= lead.note %></p>
+
+    <div class="actions">
+
+        <a href="/edit/<%= lead._id %>">Edit</a>
+
+        <form action="/delete/<%= lead._id %>?_method=DELETE" method="POST">
+
+            <button class="delete">Delete</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<% }) %>
+
+
+</body>
+</html>

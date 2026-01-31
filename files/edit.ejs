@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Lead</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<h1>Edit Lead</h1>
+
+
+<form 
+    action="/edit/<%= lead._id %>?_method=PUT" 
+    method="POST" 
+    class="card"
+>
+
+    <input name="name" value="<%= lead.name %>" required>
+
+    <input name="mobile" value="<%= lead.mobile %>" required>
+
+    <input name="email" value="<%= lead.email %>" required>
+
+    <textarea name="note" required><%= lead.note %></textarea>
+
+    <button>Update</button>
+
+</form>
+
+
+<a href="/">⬅ Back</a>
+
+</body>
+</html>

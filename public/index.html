@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Saurabh | Code Showcase</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Prism for Code Highlight -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet"/>
+</head>
+
+<body>
+
+<header>
+    <h1>💻 Saurabh Code Showcase</h1>
+    <p>View Full Project Source Code</p>
+</header>
+
+
+<div class="container">
+
+    <div class="sidebar">
+
+        <h3>📁 Project Files</h3>
+
+        <ul>
+            <li onclick="loadFile('app.js')">app.js</li>
+            <li onclick="loadFile('Lead.js')">models/Lead.js</li>
+            <li onclick="loadFile('apiLeadRoutes.js')">routes/apiLeadRoutes.js</li>
+            <li onclick="loadFile('webRoutes.js')">routes/webRoutes.js</li>
+            <li onclick="loadFile('README.md')">README.md</li>
+        </ul>
+
+    </div>
+
+
+    <div class="content">
+
+        <h2 id="fileName">Select a file</h2>
+
+        <pre>
+<code id="codeBlock" class="language-js">
+Click on any file to view code
+</code>
+        </pre>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
+</body>
+</html>

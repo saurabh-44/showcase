@@ -16,11 +16,16 @@
 
 <body>
 
+<!-- Warning Line -->
+<div class="ejs-warning">
+    ⚠️ Note: Files with <b>.ejs.txt</b> are originally <b>.ejs</b>. 
+    Please remove <b>.txt</b> after copying.
+</div>
+
 <header>
     <h1>💻 Saurabh Code Showcase</h1>
     <p>View Project Source Code</p>
 </header>
-
 
 <div class="container">
 
@@ -30,7 +35,6 @@
         <h3>📁 Project Files</h3>
 
         <ul>
-
             <!-- Backend -->
             <li onclick="loadFile('app.js')">app.js</li>
             <li onclick="loadFile('Lead.js')">models/Lead.js</li>
@@ -45,11 +49,9 @@
 
             <!-- Docs -->
             <li onclick="loadFile('README.md')">README.md</li>
-
         </ul>
 
     </div>
-
 
     <!-- Content -->
     <div class="content">
@@ -65,7 +67,6 @@ Click on any file to view code
     </div>
 
 </div>
-
 
 <!-- Scripts -->
 <script src="script.js"></script>

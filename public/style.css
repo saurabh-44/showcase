@@ -7,9 +7,17 @@ body {
     color: #e5e7eb;
 }
 
+/* Warning Line */
+.ejs-warning {
+    background: #fff3cd;
+    border: 1px solid #ffecb5;
+    color: #664d03;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
 
 /* Header */
-
 header {
     background: #020617;
     padding: 25px;
@@ -25,17 +33,13 @@ header p {
     color: #94a3b8;
 }
 
-
 /* Layout */
-
 .container {
     display: flex;
     height: calc(100vh - 90px);
 }
 
-
 /* Sidebar */
-
 .sidebar {
     width: 260px;
     background: #020617;
@@ -68,9 +72,7 @@ header p {
     background: #1e293b;
 }
 
-
 /* Content */
-
 .content {
     flex: 1;
     padding: 25px;
@@ -82,9 +84,7 @@ header p {
     color: #38bdf8;
 }
 
-
 /* Code Box */
-
 pre {
     background: #020617 !important;
     border-radius: 10px;
